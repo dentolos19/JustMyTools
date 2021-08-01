@@ -1,30 +1,23 @@
 ﻿@page "/guid-generator"
 
-@using System
-
 <h3>GUID Generator</h3>
 
-<SfTextBox Readonly="true" @bind-Value="OutputGuid"/>
+<TextEdit @bind-Text="OutputGuid" ReadOnly="true"/>
 
 <br/>
-<br/>
 
-<SfCheckBox Label="Use Uppercase" @bind-Checked="UseUppercase"/>
-<br/>
-<SfCheckBox Label="Use Hyphens" @bind-Checked="UseHyphens"/>
-<br/>
-<SfCheckBox Label="Add Braces" @bind-Checked="AddBraces"/>
+<Check TValue="bool" @bind-Checked="UseUppercase">Use Uppercase</Check>
+<Check TValue="bool" @bind-Checked="UseHyphens">Use Hyphens</Check>
+<Check TValue="bool" @bind-Checked="AddBraces">Add Braces</Check>
 
 <br/>
-<br/>
 
-<SfButton IsPrimary="true" @onclick="GenerateGuid">Generate GUID</SfButton>
+<Button Color="Color.Primary" Clicked="GenerateGuid">Generate GUID</Button>
 
 @code
 {
 
     private string OutputGuid { get; set; }
-
     private bool UseUppercase { get; set; }
     private bool UseHyphens { get; set; } = true;
     private bool AddBraces { get; set; } = true;
