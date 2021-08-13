@@ -1,0 +1,54 @@
+﻿@page "/cvt/roman"
+
+<Title Size="3">Roman Numerals Converter</Title>
+
+<Field>
+    <FieldLabel>Arabic Numerals (e.g. 1, 2, 3)</FieldLabel>
+    <NumericEdit @bind-Value="ArabicNumbers" Min="1" Max="99999"/>
+</Field>
+
+<br/>
+
+<Field>
+    <FieldLabel>Roman Numeral (e.g. I, II, III)</FieldLabel>
+    <TextEdit @bind-Text="RomanNumbers"/>
+</Field>
+
+<br/>
+
+<Buttons >
+    <Button Color="Color.Primary" Clicked="ArabicToRoman">Arabic To Roman</Button>
+    <Button Color="Color.Secondary" Clicked="RomanToArabic">Roman To Arabic</Button>
+</Buttons>
+
+@code
+{
+
+    private int ArabicNumbers { get; set; } = 1;
+    private string RomanNumbers { get; set; } = "I";
+
+    private void ArabicToRoman()
+    {
+        try
+        {
+            RomanNumbers = RomanNumerals.ToRomanNumerals(ArabicNumbers);
+        }
+        catch
+        {
+            // do nothing
+        }
+    }
+
+    private void RomanToArabic()
+    {
+        try
+        {
+            ArabicNumbers = RomanNumerals.FromRomanNumerals(RomanNumbers);
+        }
+        catch
+        {
+            // do nothing
+        }
+    }
+
+}
