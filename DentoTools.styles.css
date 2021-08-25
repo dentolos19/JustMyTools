@@ -1,0 +1,86 @@
+/* /Components/MainLayout.razor.rz.scp.css */
+.page[b-fj8nho3ivs]
+{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.main[b-fj8nho3ivs]
+{
+    flex: 1;
+}
+
+.sidebar[b-fj8nho3ivs]
+{
+    background-image: linear-gradient(180deg, rgb(5, 39, 103) 0%, #3a0647 70%);
+}
+
+.top-row[b-fj8nho3ivs]
+{
+    align-items: center;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #d6d5d5;
+    display: flex;
+    height: 3.5rem;
+    justify-content: flex-end;
+}
+
+.top-row[b-fj8nho3ivs]  a, .top-row .btn-link[b-fj8nho3ivs]
+{
+    margin-left: 1.5rem;
+    white-space: nowrap;
+}
+
+.top-row a:first-child[b-fj8nho3ivs]
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 640.98px)
+{
+    .top-row:not(.auth)[b-fj8nho3ivs]
+    {
+        display: none;
+    }
+
+    .top-row.auth[b-fj8nho3ivs]
+    {
+        justify-content: space-between;
+    }
+
+    .top-row a[b-fj8nho3ivs], .top-row .btn-link[b-fj8nho3ivs]
+    {
+        margin-left: 0;
+    }
+}
+
+@media (min-width: 641px)
+{
+    .page[b-fj8nho3ivs]
+    {
+        flex-direction: row;
+    }
+
+    .sidebar[b-fj8nho3ivs]
+    {
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        width: 250px;
+    }
+
+    .top-row[b-fj8nho3ivs]
+    {
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+
+    .main > div[b-fj8nho3ivs]
+    {
+        padding-left: 2rem !important;
+        padding-right: 1.5rem !important;
+    }
+}
